@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Desktop Notification</title>
+	</head>
+	<body>
+		
+		<a href="javascript:;" id="dnperm">Request Permission</a>
+		<a href="javascript:;" id="dntrigger">Trigger</a>
+
+		<script>
+		var dnperm = document.getElementById("dnperm");
+		var dntrigger = document.getElementById("dntrigger");
+		dnperm.addEventListener('click', function(e) {
+			e.preventDefault();
+			if(!window.Notification) {
+				alert("Notification is not supported!");
+			} else {
+				Notification.requestPermission().then(function(p) {
+					if(p === 'denied') {
+						alert("You denied to show notification!");
+					} else {
+						alert("You granted the notification!");
+					}
+				});
+			}
+		});
+		dntrigger.addEventListener('click', function(e) {
+			var notify;
+			e.preventDefault();
+			if(Notification.permission !== 'default') {
+				notify = new Notification('New Message from Nihar', {
+					'body': 'This is a test message',
+					'icon': 'images.jpeg',
+					'tag': '1234'
+				});
+				notify.onclick = function() {
+					window.location = '?message=' + this.tag;
+				}
+			} else {
+				alert("Please click on request permission link before acessing this link!");
+			}
+		});
+		</script>
+
+	</body>
+</html>
