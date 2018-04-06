@@ -1,46 +1,34 @@
 
-<!DOCTYPE html>
-<html lang='en' class=''>
-<head>
-<script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script>
-<script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script>
-<meta charset='UTF-8'>
-<meta name="robots" content="noindex">
-<link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
-<link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/anon/pen/zReERg" />
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/peanav/pen/ulkof" />
 
 
-<style>*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  sizing: border-box;
-  box-sizing: border-box;
+<style class="cp-pen-styles">*, *:before, *:after {
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 body {
-  overflow: hidden;
-  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight",
-    "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  color: rgba(255, 255, 255, 1);
-  margin: 0;
-  padding: 0;
-  background: #4a4a4a;
-  touch-callout: none;
-  select: none;
-  user-select: none;
-  user-select: none;
-  user-select: none;
-  user-select: none;
+ overflow: hidden;
+ font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ font-weight: 100;
+ color: rgba(255, 255, 255, 1);
+ margin: 0;
+ padding: 0;
+ background: white;
+ -webkit-touch-callout: none;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
 }
 
 #calendar {
-  transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   width: 420px;
-  margin: auto;
+  margin: 0 auto;
   height: 570px;
   overflow: hidden;
 }
@@ -50,7 +38,7 @@ body {
   width: 420px;
   background: rgba(66, 66, 66, 1);
   text-align: center;
-  position: relative;
+  position:relative;
   z-index: 100;
 }
 
@@ -63,8 +51,7 @@ body {
   letter-spacing: 1px;
 }
 
-.left,
-.right {
+.left, .right {
   position: absolute;
   width: 0px;
   height: 0px;
@@ -73,13 +60,13 @@ body {
   margin-top: -7.5px;
   cursor: pointer;
 }
-/*arrow*/
+
 .left {
   border-width: 7.5px 10px 7.5px 0;
   border-color: transparent rgba(160, 159, 160, 1) transparent transparent;
   left: 20px;
 }
-/*arrow*/
+
 .right {
   border-width: 7.5px 0 7.5px 10px;
   border-color: transparent transparent transparent rgba(160, 159, 160, 1);
@@ -92,40 +79,40 @@ body {
 }
 
 .month.new {
- animation: fadeIn 1s ease-out;
- opacity: 1;
+  -webkit-animation: fadeIn 1s ease-out;
+  opacity: 1;
 }
 
 .month.in.next {
-  animation: moveFromTopFadeMonth 0.4s ease-out;
-  animation: moveFromTopFadeMonth 0.4s ease-out;
-  animation: moveFromTopFadeMonth 0.4s ease-out;
+  -webkit-animation: moveFromTopFadeMonth .4s ease-out;
+  -moz-animation: moveFromTopFadeMonth .4s ease-out;
+  animation: moveFromTopFadeMonth .4s ease-out;
   opacity: 1;
 }
 
 .month.out.next {
- animation: moveToTopFadeMonth 0.4s ease-in;
- animation: moveToTopFadeMonth 0.4s ease-in;
- animation: moveToTopFadeMonth 0.4s ease-in;
- opacity: 1;
+  -webkit-animation: moveToTopFadeMonth .4s ease-in;
+  -moz-animation: moveToTopFadeMonth .4s ease-in;
+  animation: moveToTopFadeMonth .4s ease-in;
+  opacity: 1;
 }
 
 .month.in.prev {
- animation: moveFromBottomFadeMonth 0.4s ease-out;
- animation: moveFromBottomFadeMonth 0.4s ease-out;
- animation: moveFromBottomFadeMonth 0.4s ease-out;
- opacity: 1;
+  -webkit-animation: moveFromBottomFadeMonth .4s ease-out;
+  -moz-animation: moveFromBottomFadeMonth .4s ease-out;
+  animation: moveFromBottomFadeMonth .4s ease-out;
+  opacity: 1;
 }
 
 .month.out.prev {
-  animation: moveToBottomFadeMonth 0.4s ease-in;
-  animation: moveToBottomFadeMonth 0.4s ease-in;
-  animation: moveToBottomFadeMonth 0.4s ease-in;
+  -webkit-animation: moveToBottomFadeMonth .4s ease-in;
+  -moz-animation: moveToBottomFadeMonth .4s ease-in;
+  animation: moveToBottomFadeMonth .4s ease-in;
   opacity: 1;
 }
 
 .week {
-  background: #4a4a4a;
+ background: #4A4A4A;
 }
 
 .day {
@@ -135,13 +122,13 @@ body {
   text-align: center;
   vertical-align: top;
   cursor: pointer;
-  background: #4a4a4a;
+  background: #4A4A4A;
   position: relative;
   z-index: 100;
 }
 
 .day.other {
-  color: rgba(255, 255, 255, 0.3);
+ color: rgba(255, 255, 255, .3);
 }
 
 .day.today {
@@ -152,14 +139,15 @@ body {
   font-size: 9px;
   text-transform: uppercase;
   margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.7px;
+  color: rgba(255, 255, 255, .5);
+  letter-spacing: .7px;
 }
 
 .day-number {
   font-size: 24px;
   letter-spacing: 1.5px;
 }
+
 
 .day .day-events {
   list-style: none;
@@ -181,18 +169,10 @@ body {
   margin: 0 1px;
 }
 
-.blue {
-  background: rgba(156, 202, 235, 1);
-}
-.orange {
-  background: rgba(247, 167, 0, 1);
-}
-.green {
-  background: rgba(153, 198, 109, 1);
-}
-.yellow {
-  background: rgba(249, 233, 0, 1);
-}
+.blue { background: rgba(156, 202, 235, 1); }
+.orange { background: rgba(247, 167, 0, 1); }
+.green { background: rgba(153, 198, 109, 1); }
+.yellow { background: rgba(249, 233, 0, 1); }
 
 .details {
   position: relative;
@@ -204,15 +184,15 @@ body {
 }
 
 .details.in {
-  animation: moveFromTopFade 0.5s ease both;
-  animation: moveFromTopFade 0.5s ease both;
-  animation: moveFromTopFade 0.5s ease both;
+  -webkit-animation: moveFromTopFade .5s ease both;
+  -moz-animation: moveFromTopFade .5s ease both;
+  animation: moveFromTopFade .5s ease both;
 }
 
 .details.out {
-  animation: moveToTopFade 0.5s ease both;
-  animation: moveToTopFade 0.5s ease both;
-  animation: moveToTopFade 0.5s ease both;
+  -webkit-animation: moveToTopFade .5s ease both;
+  -moz-animation: moveToTopFade .5s ease both;
+  animation: moveToTopFade .5s ease both;
 }
 
 .arrow {
@@ -236,33 +216,33 @@ body {
 }
 
 .events.in {
-  animation: fadeIn 0.3s ease both;
-  animation: fadeIn 0.3s ease both;
-  animation: fadeIn 0.3s ease both;
+  -webkit-animation: fadeIn .3s ease both;
+  -moz-animation: fadeIn .3s ease both;
+  animation: fadeIn .3s ease both;
 }
 
 .events.in {
-  animation-delay: 0.3s;
-  animation-delay: 0.3s;
-  animation-delay: 0.3s;
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  animation-delay: .3s;
 }
 
 .details.out .events {
-  animation: fadeOutShrink 0.4s ease both;
-  animation: fadeOutShink 0.4s ease both;
-  animation: fadeOutShink 0.4s ease both;
+  -webkit-animation: fadeOutShrink .4s ease both;
+  -moz-animation: fadeOutShink .4s ease both;
+  animation: fadeOutShink .4s ease both;
 }
 
 .events.out {
-  animation: fadeOut 0.3s ease both;
-  animation: fadeOut 0.3s ease both;
-  animation: fadeOut 0.3s ease both;
+  -webkit-animation: fadeOut .3s ease both;
+  -moz-animation: fadeOut .3s ease both;
+  animation: fadeOut .3s ease both;
 }
 
 .event {
   font-size: 16px;
   line-height: 22px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   padding: 2px 16px;
   vertical-align: top;
 }
@@ -284,6 +264,15 @@ body {
   padding: 0 0 0 7px;
 }
 
+.legend {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: rgba(60, 60, 60, 1);
+  line-height: 30px;
+
+}
 
 .entry {
   position: relative;
@@ -296,203 +285,107 @@ body {
 
 .entry:after {
   position: absolute;
-  content: "";
+  content: '';
   height: 5px;
   width: 5px;
   top: 12px;
   left: 14px;
 }
 
-.entry.blue:after {
-  background: rgba(156, 202, 235, 1);
-}
-.entry.orange:after {
-  background: rgba(247, 167, 0, 1);
-}
-.entry.green:after {
-  background: rgba(153, 198, 109, 1);
-}
-.entry.yellow:after {
-  background: rgba(249, 233, 0, 1);
-}
-.entry.red:after {
-  background: rgba(249, 233, 0, 1);
-}
+.entry.blue:after { background: rgba(156, 202, 235, 1); }
+.entry.orange:after { background: rgba(247, 167, 0, 1); }
+.entry.green:after { background: rgba(153, 198, 109, 1); }
+.entry.yellow:after { background: rgba(249, 233, 0, 1); }
 
 /* Animations are cool!  */
- moveFromTopFade {
-  from {
-    opacity: 0.3;
-    height: 0px;
-    margin-top: 0px;
-    transform: translateY(-100%);
-  }
+@-webkit-keyframes moveFromTopFade {
+  from { opacity: .3; height:0px; margin-top:0px; -webkit-transform: translateY(-100%); }
 }
-moveFromTopFade {
-  from {
-    height: 0px;
-    margin-top: 0px;
-    transform: translateY(-100%);
-  }
+@-moz-keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; -moz-transform: translateY(-100%); }
 }
-moveFromTopFade {
-  from {
-    height: 0px;
-    margin-top: 0px;
-    transform: translateY(-100%);
-  }
+@keyframes moveFromTopFade {
+  from { height:0px; margin-top:0px; transform: translateY(-100%); }
 }
 
-moveToTopFade {
-  to {
-    opacity: 0.3;
-    height: 0px;
-    margin-top: 0px;
-    opacity: 0.3;
-    transform: translateY(-100%);
-  }
+@-webkit-keyframes moveToTopFade {
+  to { opacity: .3; height:0px; margin-top:0px; opacity: 0.3; -webkit-transform: translateY(-100%); }
 }
-moveToTopFade {
-  to {
-    height: 0px;
-    -moz-transform: translateY(-100%);
-  }
+@-moz-keyframes moveToTopFade {
+  to { height:0px; -moz-transform: translateY(-100%); }
 }
-moveToTopFade {
-  to {
-    height: 0px;
-    transform: translateY(-100%);
-  }
+@keyframes moveToTopFade {
+  to { height:0px; transform: translateY(-100%); }
 }
 
-moveToTopFadeMonth {
-  to {
-    opacity: 0;
-    transform: translateY(-30%) scale(0.95);
-  }
+@-webkit-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
 }
- moveToTopFadeMonth {
-  to {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
+@-moz-keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
 }
- moveToTopFadeMonth {
-  to {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
+@keyframes moveToTopFadeMonth {
+  to { opacity: 0; -moz-transform: translateY(-30%); }
 }
 
- moveFromTopFadeMonth {
-  from {
-    opacity: 0;
-    transform: translateY(30%) scale(0.95);
-  }
+@-webkit-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
 }
-moveFromTopFadeMonth {
-  from {
-    opacity: 0;
-    transform: translateY(30%);
-  }
+@-moz-keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
 }
- moveFromTopFadeMonth {
-  from {
-    opacity: 0;
-    transform: translateY(30%);
-  }
+@keyframes moveFromTopFadeMonth {
+  from { opacity: 0; -moz-transform: translateY(30%); }
 }
 
-moveToBottomFadeMonth {
-  to {
-    opacity: 0;
-    transform: translateY(30%) scale(0.95);
-  }
+@-webkit-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%) scale(.95); }
 }
- moveToBottomFadeMonth {
-  to {
-    opacity: 0;
-transform: translateY(30%);
-  }
+@-moz-keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
 }
- moveToBottomFadeMonth {
-  to {
-    opacity: 0;
-    transform: translateY(30%);
-  }
+@keyframes moveToBottomFadeMonth {
+  to { opacity: 0; -webkit-transform: translateY(30%); }
 }
 
- moveFromBottomFadeMonth {
-  from {
-    opacity: 0;
-    transform: translateY(-30%) scale(0.95);
-  }
+@-webkit-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%) scale(.95); }
 }
-moveFromBottomFadeMonth {
-  from {
-    opacity: 0;
-   transform: translateY(-30%);
-  }
+@-moz-keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
 }
- moveFromBottomFadeMonth {
-  from {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
+@keyframes moveFromBottomFadeMonth {
+  from { opacity: 0; -webkit-transform: translateY(-30%); }
 }
 
- fadeIn {
-  from {
-    opacity: 0;
-  }
+@-webkit-keyframes fadeIn  {
+  from { opacity: 0; }
 }
- fadeIn {
-  from {
-    opacity: 0;
-  }
+@-moz-keyframes fadeIn  {
+  from { opacity: 0; }
 }
- fadeIn {
-  from {
-    opacity: 0;
-  }
+@keyframes fadeIn  {
+  from { opacity: 0; }
 }
 
- fadeOut {
-  to {
-    opacity: 0;
-  }
+@-webkit-keyframes fadeOut  {
+  to { opacity: 0; }
 }
- fadeOut {
-  to {
-    opacity: 0;
-  }
+@-moz-keyframes fadeOut  {
+  to { opacity: 0; }
 }
- fadeOut {
-  to {
-    opacity: 0;
-  }
+@keyframes fadeOut  {
+  to { opacity: 0; }
 }
 
- fadeOutShink {
-  to {
-    opacity: 0;
-    padding: 0px;
-    height: 0px;
-  }
+@-webkit-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
 }
- fadeOutShink {
-  to {
-    opacity: 0;
-    padding: 0px;
-    height: 0px;
-  }
+@-moz-keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
 }
- fadeOutShink {
-  to {
-    opacity: 0;
-    padding: 0px;
-    height: 0px;
-  }
+@keyframes fadeOutShink  {
+  to { opacity: 0; padding: 0px; height: 0px; }
 }
 </style></head><body>
 <div id="calendar"></div>
@@ -682,7 +575,7 @@ window.CP.exitedLoop(3);
     return classes.join(' ');
   }
 
-    Calendar.prototype.openDay = function(el) {
+  Calendar.prototype.openDay = function(el) {
     var details, arrow;
     var dayNumber = +el.querySelectorAll('.day-number')[0].innerText || +el.querySelectorAll('.day-number')[0].textContent;
     var day = this.current.clone().date(dayNumber);
@@ -782,7 +675,22 @@ window.CP.exitedLoop(3);
     }
   }
 
-
+  Calendar.prototype.drawLegend = function() {
+    var legend = createElement('div', 'legend');
+    var calendars = this.events.map(function(e) {
+      return e.calendar + '|' + e.color;
+    }).reduce(function(memo, e) {
+      if(memo.indexOf(e) === -1) {
+        memo.push(e);
+      }
+      return memo;
+    }, []).forEach(function(e) {
+      var parts = e.split('|');
+      var entry = createElement('span', 'entry ' +  parts[1], parts[0]);
+      legend.appendChild(entry);
+    });
+    this.el.appendChild(legend);
+  }
 
   Calendar.prototype.nextMonth = function() {
     this.current.add('months', 1);
@@ -812,14 +720,25 @@ window.CP.exitedLoop(3);
 
 !function() {
   var data = [
-    { eventName: 'Upcoming Events: 8:00pm Black Panther', calendar: 'Movies', color: 'orange' },
-    { eventName: 'Upcoming Events: 5:30 pm Red Sparrow', calendar: 'Movies', color: 'orange' },
+    { eventName: 'Lunch Meeting w/ Mark', calendar: 'Work', color: 'orange' },
+    { eventName: 'Interview - Jr. Web Developer', calendar: 'Work', color: 'orange' },
     { eventName: 'Demo New App to the Board', calendar: 'Work', color: 'orange' },
     { eventName: 'Dinner w/ Marketing', calendar: 'Work', color: 'orange' },
 
-  
-    
+    { eventName: 'Game vs Portalnd', calendar: 'Sports', color: 'blue' },
+    { eventName: 'Game vs Houston', calendar: 'Sports', color: 'blue' },
+    { eventName: 'Game vs Denver', calendar: 'Sports', color: 'blue' },
+    { eventName: 'Game vs San Degio', calendar: 'Sports', color: 'blue' },
 
+    { eventName: 'School Play', calendar: 'Kids', color: 'yellow' },
+    { eventName: 'Parent/Teacher Conference', calendar: 'Kids', color: 'yellow' },
+    { eventName: 'Pick up from Soccer Practice', calendar: 'Kids', color: 'yellow' },
+    { eventName: 'Ice Cream Night', calendar: 'Kids', color: 'yellow' },
+
+    { eventName: 'Free Tamale Night', calendar: 'Other', color: 'green' },
+    { eventName: 'Bowling Team', calendar: 'Other', color: 'green' },
+    { eventName: 'Teach Kids to Code', calendar: 'Other', color: 'green' },
+    { eventName: 'Startup Weekend', calendar: 'Other', color: 'green' }
   ];
 
   
@@ -834,5 +753,4 @@ window.CP.exitedLoop(3);
 
 //# sourceURL=pen.js
 </script>
-</body>
-</html>
+</body></html>
